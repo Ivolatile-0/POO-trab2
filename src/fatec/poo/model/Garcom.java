@@ -34,9 +34,22 @@ public class Garcom extends Pessoa{
     public double getTotalGorjeta(){
         return totalGorjeta;
     }
-    
+
+    //Ao invés de colocar = (atribuição) colocar += (soma acumulativa)
     public void addGorjeta(double totalConta){
-        totalGorjeta = totalConta * (taxaServico / 100);
+
+        //totalGorjeta += totalConta * (taxaServico / 100);
+        System.out.println("Taxa Serviço inicio: " + taxaServico);
+        /*taxaServico = taxaServico / 100;
+        System.out.println("Taxa Serviço com porcentagem: " + taxaServico);*/
+
+        System.out.println("Total conta: " + totalConta);
+        totalConta = totalConta * taxaServico;
+        System.out.println("Total conta * taxa servico: " + totalConta);
+
+        totalGorjeta += totalConta;
+        System.out.println("Total Gorjeta: " + totalGorjeta);
+        System.out.println("");
     }
     
     public double calcSalarioFinal(){
