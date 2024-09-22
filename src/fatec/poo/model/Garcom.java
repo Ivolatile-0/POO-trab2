@@ -36,7 +36,7 @@ public class Garcom extends Pessoa{
     }
     
     public void addGorjeta(double totalConta){
-        totalGorjeta = totalConta * (taxaServico / 100);
+        totalGorjeta += totalConta * taxaServico;
     }
     
     public double calcSalarioFinal(){

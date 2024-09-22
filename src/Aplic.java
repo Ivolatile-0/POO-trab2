@@ -38,9 +38,17 @@ public class Aplic {
         System.out.println("Digite o nome do garçom: ");
         nome = entrada.next();
         System.out.println("Digite o valor da taxa de serviço: ");
-        numMesa = entrada.nextInt();
+        taxaServico = entrada.nextInt();
+        taxaServico /= 100;
         
         Garcom objGar = new Garcom(codigo, nome, taxaServico);
+
+        System.out.println("Digite o saláro base: ");
+        double salBase = entrada.nextDouble();
+        objGar.setSalarioBase(salBase);
+
+        objGar.addGorjeta(objCli1.getTotalConta());
+        objGar.addGorjeta(objCli2.getTotalConta());
         
         System.out.println("Código do Garçom: " + objGar.getCodigo());
         System.out.println("Nome do Garçom: " + objGar.getNome());
